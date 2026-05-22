@@ -1,9 +1,28 @@
-/* Custom CSS */
 body { 
     font-family: 'Inter', sans-serif; 
 }
 
-/* Animasi tambahan jika diperlukan di masa depan */
+/* Animasi Halus Navigasi */
 .scroll-smooth {
     scroll-behavior: smooth;
+}
+
+/* Efek garis bawah dinamis pada navbar menu desktop */
+@media (min-width: 768px) {
+    .nav-link {
+        position: relative;
+    }
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #2563eb;
+        transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+        width: 100%;
+    }
 }
