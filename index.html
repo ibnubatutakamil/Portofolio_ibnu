@@ -11,6 +11,61 @@
     
     <link rel="stylesheet" href="style.css">
 </head>
+
+<!-- Aesthetic Liquid Entrance -->
+<div id="liquid-gate" class="fixed inset-0 z-[999] bg-[#0a0a0a] flex items-center justify-center overflow-hidden transition-all duration-[1.5s] ease-[cubic-bezier(1,0,0,1)]">
+    
+    <!-- Background: Abstract Mesh Gradient (Focused & Clean) -->
+    <div class="absolute inset-0 opacity-60">
+        <div class="absolute top-[-20%] right-[-10%] w-[70vw] h-[70vw] bg-blue-700 rounded-full blur-[150px] animate-liquid-1"></div>
+        <div class="absolute bottom-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-indigo-600 rounded-full blur-[130px] animate-liquid-2"></div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-5xl px-12">
+        <div class="flex flex-col md:flex-row items-end justify-between gap-12">
+            
+            <div class="space-y-6">
+                <!-- Staggered Text Reveal -->
+                <div class="overflow-hidden">
+    <div class="flex items-center gap-4 translate-y-full animate-reveal">
+        <!-- Live Jam -->
+        <span id="realtime-clock" class="text-blue-400 font-mono text-[11px] tracking-[0.2em]">00:00:00</span>
+        
+        <!-- Separator -->
+        <span class="h-[1px] w-6 bg-blue-400/30"></span>
+        
+        <!-- Lokasi -->
+        <span class="text-white/50 font-mono text-[10px] tracking-[0.3em] uppercase">
+            Serang Banten, Indonesia
+        </span>
+    </div>
+</div>
+                <div class="overflow-hidden">
+                    <h1 class="text-7xl md:text-[10rem] font-black text-white leading-[0.8] tracking-tighter translate-y-full animate-reveal animation-delay-200">
+                        Welcome to<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-400 to-white">Portofolio</span>
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Dynamic Card -->
+            <div class="opacity-0 translate-x-10 animate-fade-in animation-delay-700">
+                <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-2xl w-72 hover:border-blue-500/50 transition-colors group">
+                    <div class="flex justify-between items-start mb-12">
+                        <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-bold italic">IB</div>
+                        <span class="text-[9px] text-slate-500 font-mono uppercase tracking-widest">© 2025 Edition</span>
+                    </div>
+                    <p class="text-white text-sm font-medium mb-1">Ibnu Batuta Kamil</p>
+                    <p class="text-slate-500 text-[10px] uppercase tracking-widest mb-8">Photographer | Visual Designer</p>
+                    
+                    <button onclick="accessSystem()" class="w-full py-4 bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        Click to Enter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <body class="bg-slate-50 text-slate-900 tracking-tight">
 
     <nav class="fixed w-full bg-white/80 backdrop-blur-md z-[100] border-b border-slate-100 transition-all duration-300" id="navbar">
@@ -22,7 +77,7 @@
                     <a href="#home" class="text-slate-600 hover:text-blue-600 transition nav-link">Beranda</a>
                     <a href="#about" class="text-slate-600 hover:text-blue-600 transition nav-link">Tentang</a>
                     <a href="#experience" class="text-slate-600 hover:text-blue-600 transition nav-link">Pengalaman Magang</a>
-                    <a href="#projects" class="text-slate-600 hover:text-blue-600 transition nav-link">Karya & Proyek</a>
+                    <a href="#projects" class="text-slate-600 hover:text-blue-600 transition nav-link">Proyek</a>
                     <a href="#certificates" class="text-slate-600 hover:text-blue-600 transition nav-link">Sertifikat</a>
                     <a href="#contact" class="text-slate-600 hover:text-blue-600 transition nav-link">Kontak</a>
                 </div>
@@ -31,6 +86,14 @@
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 py-4 flex flex-col gap-3 font-semibold text-sm">
+            <a href="#home" class="text-slate-600 hover:text-blue-600 transition">Beranda</a>
+            <a href="#about" class="text-slate-600 hover:text-blue-600 transition">Tentang</a>
+            <a href="#experience" class="text-slate-600 hover:text-blue-600 transition">Pengalaman Magang</a>
+            <a href="#projects" class="text-slate-600 hover:text-blue-600 transition">Proyek</a>
+            <a href="#certificates" class="text-slate-600 hover:text-blue-600 transition">Sertifikat</a>
+            <a href="#contact" class="text-slate-600 hover:text-blue-600 transition">Kontak</a>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 py-4 flex flex-col gap-3 font-semibold text-sm">
             <a href="#home" class="text-slate-600 hover:text-blue-600 transition">Beranda</a>
@@ -46,22 +109,22 @@
         <div class="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-transparent -z-10"></div>
         <div class="max-w-4xl mx-auto text-center">
             <div class="relative w-32 h-32 mx-auto mb-8">
-                <img src="https://i.postimg.cc/76F7BPPP/1749043052174.jpg" alt="Ibnu Batuta Kamil" class="w-full h-full rounded-full object-cover ring-4 ring-blue-100 shadow-xl">
+                <img src="foto/Foto ibnu.jpg" alt="Ibnu Batuta Kamil" class="w-full h-full rounded-full object-cover ring-4 ring-blue-100 shadow-xl">
                 <span class="absolute bottom-1 right-2 bg-green-500 w-4 h-4 rounded-full border-2 border-white animate-pulse"></span>
             </div>
             
-            <p class="text-blue-600 font-bold uppercase tracking-widest text-xs md:text-sm mb-3">UI/UX & Web Developer | Visual Designer</p>
+            <p class="text-blue-600 font-bold uppercase tracking-widest text-xs md:text-sm mb-3">Photographer | Visual Designer</p>
             <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-none text-slate-900">
                 Halo, Saya <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Ibnu Batuta Kamil</span>
             </h1>
             <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-                Menyatukan estetika <strong class="text-slate-800 font-semibold">Desain Komunikasi Visual (DKV)</strong> dengan fungsionalitas <strong class="text-slate-800 font-semibold">Sistem Informasi</strong> untuk mengembangkan solusi digital minimalis, cepat, dan berdampak tinggi pada bisnis.
+                Menyatukan estetika <strong class="text-slate-800 font-semibold">Desain Komunikasi Visual </strong> dengan fungsionalitas <strong class="text-slate-800 font-semibold">Sistem Informasi</strong> untuk mengembangkan solusi digital minimalis, cepat, dan berdampak tinggi pada bisnis.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#projects" class="bg-blue-600 text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-200 text-center">
                     Lihat Portofolio
                 </a>
-                <a href="CV ibnu.jpg" class="bg-white border border-slate-200 text-slate-700 px-8 py-3.5 rounded-xl font-semibold hover:bg-slate-50 transition shadow-sm text-center flex items-center justify-center gap-2">
+                <a href="CV Ibnu Batuta Kamil.jpg" class="bg-white border border-slate-200 text-slate-700 px-8 py-3.5 rounded-xl font-semibold hover:bg-slate-50 transition shadow-sm text-center flex items-center justify-center gap-2">
                     <i class="fas fa-download text-sm"></i> Unduh CV
                 </a>
             </div>
@@ -76,10 +139,13 @@
                     <h2 class="text-3xl font-bold tracking-tight">Tentang Saya</h2>
                 </div>
                 <p class="text-slate-600 leading-relaxed mb-6 text-base md:text-lg">
-                    Sebagai lulusan DKV dari SMKN 7 Kota Serang (2025) yang kini sedang mendalami keilmuan Sistem Informasi di Universitas Pamulang, saya berada di titik temu antara teknologi dan seni visual. 
+                    Halo, saya Ibnu Batuta Kamil. Sebagai mahasiswa Sistem Informasi yang mencintai dunia street photography dan desain visual, saya tidak hanya membangun sistem yang berfungsi dengan baik, tetapi juga mengutamakan keindahan visualnya. 
                 </p>
-                <p class="text-slate-600 leading-relaxed mb-6">
-                    Saya percaya sebuah produk digital tidak hanya harus bekerja dengan sistem yang kokoh, melainkan juga harus memiliki impresi visual yang kuat dan memanjakan pengguna. Fokus saya saat ini adalah menjembatani kode pemrograman web dengan prinsip desain yang presisi.
+                <p class="text-slate-600 leading-relaxed mb-6 text-base md:text-lg">
+                    Pengalaman saya di PT. Bimasena Visual Indonesia dalam mengelola fotografi komersial serta produksi film dokumenter telah mengasah ketajaman estetika dan manajemen alur kerja saya di industri kreatif.
+                </p>
+                <p class="text-slate-600 leading-relaxed mb-6 text-base md:text-lg">
+                    Saya percaya bahwa teknologi terbaik lahir dari penggabungan estetika DKV dan fungsionalitas Sistem Informasi. Lewat kombinasi ini, saya siap membantu bisnis menghadirkan produk digital—seperti platform web dan UI/UX—yang minimalis, berkinerja cepat, dan berdampak tinggi.
                 </p>
             </div>
             
@@ -149,6 +215,7 @@
                             <li>Mengambil dan mengkurasi hasil <strong class="text-slate-700">fotografi produk dan documentation komersial</strong>.</li>
                             <li>Melakukan proses <strong class="text-slate-700">layouting media cetak</strong> dan digital untuk kebutuhan publikasi klien.</li>
                             <li>Terlibat aktif dalam pra-produksi hingga pasca-produksi pembuatan <strong class="text-slate-700">film dokumenter</strong> instansi.</li>
+                            <li>Terlibat dalam menjaga stan <strong class="text-slate-700">kesenian</strong> di banten lama</li>
                         </ul>
                     </div>
                 </div>
@@ -185,26 +252,7 @@
                     </div>
                 </div>
                 
-                <div class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
-                    <div class="overflow-hidden relative aspect-video bg-slate-100">
-                        <img src="Visuplaza.id.png" alt="Website Visuplaza.id" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">Web Development</span>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="font-bold text-xl text-slate-800 mb-2 group-hover:text-blue-600 transition">Website Visuplaza.id</h3> 
-                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-                            Platform etalase digital komersial yang dirancang dengan arsitektur kode bersih (*clean code*). Menampilkan performa rendering super cepat berkat optimasi aset visual yang efisien.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6 mt-auto">
-                            <span class="text-[10px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded font-bold uppercase tracking-wider">HTML5</span>
-                            <span class="text-[10px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded font-bold uppercase tracking-wider">Tailwind CSS</span>
-                            <span class="text-[10px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded font-bold uppercase tracking-wider">JavaScript</span>
-                        </div>
-                        <a href="https://visuplaza-id.netlify.app/" target="_blank" class="text-blue-600 font-bold text-sm inline-flex items-center gap-1 hover:underline">
-                            Kunjungi Live Website <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -220,70 +268,84 @@
                 <div class="group bg-white border border-slate-200 rounded-2xl p-4 hover:shadow-xl transition-all flex flex-col justify-between">
                     <div>
                         <div class="relative overflow-hidden rounded-xl mb-4 aspect-video bg-slate-100">
-                            <img src="https://i.postimg.cc/GhcTghgP/IMG-20260130-210550.jpg" alt="Sertifikat Magang" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <img src="sertif/sertifikat magang.jpg" alt="Sertifikat Magang" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         </div>
                         <h3 class="font-bold text-slate-800 leading-tight mb-2 group-hover:text-blue-600 transition">Sertifikat Praktik Kerja Industri (Magang)</h3>
                         <p class="text-xs text-slate-500 mb-4">Dikeluarkan oleh: Direktur Utama PT Bimasena Visual Indonesia / Destian Andriyanto Kurniawan, S.H.</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex justify-between items-center mt-auto">
                         <span class="text-[11px] bg-blue-50 text-blue-600 font-bold px-2 py-0.5 rounded uppercase">Des 2023</span>
-                        <a href="https://postimg.cc/HjhLVHgj" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><i class="fas fa-external-link-alt text-sm"></i></a>
+                        <a href="sertif/sertifikat magang.jpg" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><i class="fas fa-external-link-alt text-sm"></i></a>
                     </div>
                 </div>
 
                 <div class="group bg-white border border-slate-200 rounded-2xl p-4 hover:shadow-xl transition-all flex flex-col justify-between">
                     <div>
                         <div class="relative overflow-hidden rounded-xl mb-4 aspect-video bg-slate-100">
-                            <img src="https://i.postimg.cc/xTcn1wXT/SERTIFIKAT-LDKO.jpg" alt="Sertifikat LDKO" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <img src="sertif/CERTIFICATE OF COMPETENCY (1).jpg" alt="CERTIFICATE OF COMPETENCY" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <h3 class="font-bold text-slate-800 leading-tight mb-2 group-hover:text-blue-600 transition">Melakukan Pemotretan, Editing dan Pencetakan Foto</h3>
+                        <p class="text-xs text-slate-500 mb-4">Dikeluarkan oleh: Kepala Sekolah SMKN 7 KOTA SERANG / Dr. Hj. Sunariah, S.Ag., M.Pd.I.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex justify-between items-center mt-auto">
+                        <span class="text-[11px] bg-blue-50 text-blue-600 font-bold px-2 py-0.5 rounded uppercase">Feb 2025</span>
+                        <a href="sertif/CERTIFICATE OF COMPETENCY (1).jpg" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><i class="fas fa-external-link-alt text-sm"></i></a>
+                    </div>
+                </div>
+
+                <div class="group bg-white border border-slate-200 rounded-2xl p-4 hover:shadow-xl transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden rounded-xl mb-4 aspect-video bg-slate-100">
+                            <img src="sertif/SERTIFIKAT-LDKO (1).jpg" alt="Sertifikat LDKO" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         </div>
                         <h3 class="font-bold text-slate-800 leading-tight mb-2 group-hover:text-blue-600 transition">Latihan Dasar Kepemimpinan Organisasi (LDKO)</h3>
                         <p class="text-xs text-slate-500 mb-4">Dikeluarkan oleh: HMSI Universitas Pamulang Kampus Serang</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex justify-between items-center mt-auto">
                         <span class="text-[11px] bg-blue-50 text-blue-600 font-bold px-2 py-0.5 rounded uppercase">Sep 2025</span>
-                        <a href="https://postimg.cc/kB3kjhNk" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><i class="fas fa-external-link-alt text-sm"></i></a>
+                        <a href="sertif/SERTIFIKAT-LDKO (1).jpg" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><i class="fas fa-external-link-alt text-sm"></i></a>
                     </div>
                 </div>
 
                 <div class="group bg-white border border-slate-200 rounded-2xl p-4 hover:shadow-xl transition-all flex flex-col justify-between">
                     <div>
                         <div class="relative overflow-hidden rounded-xl mb-4 aspect-video bg-slate-100">
-                            <img src="https://i.postimg.cc/wMb8TL4D/sertifikat-seminar-unpam-agama-page-0001.jpg" alt="Sertifikat Karakter" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <img src="sertif/sertifikat seminar unpam agama.jpg" alt="Sertifikat Karakter" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         </div>
                         <h3 class="font-bold text-slate-800 leading-tight mb-2 group-hover:text-blue-600 transition">Seminar Penguatan Karakter, Kecerdasan Spiritual & Emosional</h3>
                         <p class="text-xs text-slate-500 mb-4">Dikeluarkan oleh: Lembaga Kajian Keagamaan UNPAM Serang</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex justify-between items-center mt-auto">
                         <span class="text-[11px] bg-blue-50 text-blue-600 font-bold px-2 py-0.5 rounded uppercase">Nov 2025</span>
-                        <a href="https://postimg.cc/gLRBgXW0" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><i class="fas fa-external-link-alt text-sm"></i></a>
+                        <a href="sertif/sertifikat seminar unpam agama.jpg" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><i class="fas fa-external-link-alt text-sm"></i></a>
                     </div>
                 </div>
 
                 <div class="group bg-white border border-slate-200 rounded-2xl p-4 hover:shadow-xl transition-all flex flex-col justify-between">
                     <div>
                         <div class="relative overflow-hidden rounded-xl mb-4 aspect-video bg-slate-100">
-                            <img src="https://i.postimg.cc/C1msWNd7/sertifikat-seminar-unpam-page-0001.jpg" alt="Sertifikat Tech" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <img src="sertif/sertifikat seminar unpam si.jpg" alt="Sertifikat Tech" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         </div>
                         <h3 class="font-bold text-slate-800 leading-tight mb-2 group-hover:text-blue-600 transition">Unlocking Digital Potential: Big Data & AI Smart Transformation</h3>
                         <p class="text-xs text-slate-500 mb-4">Dikeluarkan oleh: SENSASI UNPAM / Eka Ramadhani Putra, S.Kom., M.Kom.</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex justify-between items-center mt-auto">
                         <span class="text-[11px] bg-blue-50 text-blue-600 font-bold px-2 py-0.5 rounded uppercase">Des 2025</span>
-                        <a href="https://postimg.cc/7GJzzS3J" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><i class="fas fa-external-link-alt text-sm"></i></a>
+                        <a href="sertif/sertifikat seminar unpam si.jpg" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><i class="fas fa-external-link-alt text-sm"></i></a>
                     </div>
                 </div>
 
                 <div class="group bg-white border border-slate-200 rounded-2xl p-4 hover:shadow-xl transition-all flex flex-col justify-between">
                     <div>
                         <div class="relative overflow-hidden rounded-xl mb-4 aspect-video bg-slate-100">
-                            <img src="https://i.postimg.cc/ncYSkvGy/Sertifikat-IDN-page-0001.jpg" alt="Sertifikat Network Security" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <img src="sertif/Sertifikat IDN_page-0001 (1).jpg" alt="Sertifikat Network Security" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         </div>
                         <h3 class="font-bold text-slate-800 leading-tight mb-2 group-hover:text-blue-600 transition">Solusi Praktis Membangun Sistem Keamanan Dari Nol</h3>
                         <p class="text-xs text-slate-500 mb-4">Dikeluarkan oleh: CEO of ID-Networkers / Dedi Gunawan, M.T., CCIE</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex justify-between items-center mt-auto">
                         <span class="text-[11px] bg-blue-50 text-blue-600 font-bold px-2 py-0.5 rounded uppercase">Jan 2026</span>
-                        <a href="https://postimg.cc/gnjKcL5s" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><i class="fas fa-external-link-alt text-sm"></i></a>
+                        <a href="sertif/Sertifikat IDN_page-0001 (1).jpg" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><i class="fas fa-external-link-alt text-sm"></i></a>
                     </div>
                 </div>
             </div>
@@ -306,7 +368,7 @@
             
             <div class="flex justify-center gap-6 text-xl order-1 md:order-2">
                 <a href="https://github.com/ibnubatutakamil" target="_blank" class="hover:text-white transition"><i class="fab fa-github"></i></a>
-                <a href="https://x.com/Ibattt.sky" target="_blank" class="hover:text-white transition"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://x.com/Ibattt.sky" target="_blank" class="hover:text-white transition"><i class="fab fa-x"></i></a>
                 <a href="https://www.instagram.com/ibat.sky" target="_blank" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
                 <a href="https://line.me/ti/p/~ibat.sky" target="_blank" class="hover:text-white transition"><i class="fab fa-line"></i></a>
                 <a href="https://www.linkedin.com/in/Ibnu-Batuta-Kamil" target="_blank" class="hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
