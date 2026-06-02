@@ -35,3 +35,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.body.style.overflow = 'hidden';
+
+function accessSystem() {
+    const gate = document.getElementById('liquid-gate');
+    gate.classList.add('unlocked');
+    
+    setTimeout(() => {
+        gate.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Aktifkan scroll di portofolio utamamu
+    }, 1500);
+}
+
+function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    
+    const timeString = `${hours}:${minutes}:${seconds}`;
+    document.getElementById('realtime-clock').textContent = timeString;
+}
+
+// Jalankan setiap detik
+setInterval(updateClock, 1000);
+updateClock(); // Panggil sekali saat start agar tidak delay
