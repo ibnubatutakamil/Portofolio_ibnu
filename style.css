@@ -26,3 +26,121 @@ body {
         width: 100%;
     }
 }
+
+@keyframes liquid-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(100px, -50px) scale(1.1); }
+}
+
+@keyframes liquid-2 {
+    0%, 100% { transform: translate(0, 0) scale(1.1); }
+    50% { transform: translate(-80px, 40px) scale(1); }
+}
+
+@keyframes reveal {
+    to { transform: translateY(0); }
+}
+
+@keyframes fade-in {
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-liquid-1 { animation: liquid-1 15s ease-in-out infinite; }
+.animate-liquid-2 { animation: liquid-2 12s ease-in-out infinite; }
+.animate-reveal { animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fade-in { animation: fade-in 1s ease-out forwards; }
+
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-700 { animation-delay: 0.7s; }
+
+/* Exit Transition */
+#liquid-gate.unlocked {
+    transform: scale(1.2);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --- MOBILE OPTIMIZATION (Untuk Ukuran HP) --- */
+
+@media (max-width: 768px) {
+    /* 1. Atur Ulang Liquid Gate agar Vertikal */
+    #liquid-gate .max-w-5xl {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    #liquid-gate .flex-col.md\:flex-row {
+        flex-direction: column !important; /* Paksa jadi vertikal */
+        align-items: flex-start !important;
+        justify-content: center;
+        gap: 2rem; /* Beri jarak antar elemen */
+        height: 100%;
+    }
+
+    /* 2. Ukuran Teks "Visual Script" di HP */
+    #liquid-gate h1 {
+        font-size: 4.5rem !important; /* Ukuran yang pas untuk layar HP */
+        line-height: 1;
+        margin-bottom: 1rem;
+    }
+
+    /* 3. Penyesuaian Kartu Profil (Dynamic Card) di HP */
+    #liquid-gate .w-72 {
+        width: 100% !important; /* Kartu jadi selebar layar */
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 1.5rem !important;
+        transform: translateX(0) !important; /* Hilangkan efek geser agar tidak keluar layar */
+    }
+
+    #liquid-gate .mb-12 {
+        margin-bottom: 2rem !important; /* Kurangi jarak kosong di dalam kartu */
+    }
+
+    /* 4. Jam & Lokasi */
+    #liquid-gate .flex.items-center.gap-4 {
+        margin-bottom: 1rem;
+        flex-wrap: wrap; /* Agar jam dan lokasi gak tabrakan */
+    }
+
+    /* 5. Navbar & Home Section */
+    #home {
+        padding-top: 8rem; /* Biar gak mentok navbar */
+        padding-bottom: 4rem;
+    }
+
+    #home h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+    }
+
+    /* 6. Grid Proyek & Sertifikat */
+    #projects .grid, 
+    #certificates .grid {
+        gap: 1.5rem;
+    }
+}
+
+/* --- ANIMATION FIXES (Biar Smooth di HP) --- */
+
+@keyframes reveal {
+    to { transform: translateY(0); }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); } /* Ubah geser samping jadi geser bawah di HP */
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Delay Utility */
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-700 { animation-delay: 0.7s; }
+
+.animate-reveal { 
+    display: inline-block;
+    animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+}
+
+.animate-fade-in { 
+    animation: fade-in 1s ease-out forwards; 
+}
